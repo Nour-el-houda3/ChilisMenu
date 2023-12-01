@@ -29,4 +29,5 @@ router.put("/plats/:id", upload.single('image'),  updatePlat);
 // Delete a Plat by ID
 router.delete("/plats/:id", deletePlat);
 
+
 module.exports = router;

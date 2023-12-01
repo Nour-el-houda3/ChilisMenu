@@ -10,7 +10,7 @@
   padding: 20px;
   background-color: #000;
   width: 100%;
-  overflow-x: auto; /* Enable horizontal scrolling for small screens */
+  overflow-x: auto; 
 }
 
 .table-container table {
@@ -25,23 +25,21 @@
 }
 
 .table-container img {
-  width: 100px; /* Set a fixed width for the images */
-  height: 100px; /* Set a fixed height for the images */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover;
 }
 
-
-/* Style for the links */
 .table-container a {
-  color: #3498db; /* Set link color */
-  text-decoration: underline; /* Underline the link */
-  margin-right: 20px; /* Add margin between links */
-  font-weight: bold; /* Make the link text bold */
-  transition: color 0.3s ease; /* Add a smooth color transition on hover */
+  color: #3498db; 
+  text-decoration: underline; 
+  margin-right: 20px; 
+  font-weight: bold; 
+  transition: color 0.3s ease; 
 
-  /* Add hover effect */
+  
   &:hover {
-    color: #2c3e50; /* Change color on hover */
+    color: #2c3e50; 
   }
 }
 

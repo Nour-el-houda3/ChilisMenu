@@ -1,6 +1,3 @@
-/* Add this to your createComponentStyles.css file */
-
-/* General styles */
 .form-container {
   margin: auto;
 }
@@ -50,25 +47,25 @@
   background-color: #45a049;
 }
 
-/* Image preview styling */
+
 .image-preview {
   max-width: 200px;
   max-height: 200px;
   margin-top: 10px;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
   .form {
-    padding: 30px; /* Adjust padding for smaller screens */
+    padding: 30px; 
   }
 
   .form-input {
-    width: 100%; /* Make the input fields take up the full width */
+    width: 100%; 
   }
 
   .image-preview {
-    max-width: 100%; /* Make the image preview take up the full width */
-    max-height: auto; /* Allow the height to adjust proportionally */
+    max-width: 100%; 
+    max-height: auto; 
   }
 }

@@ -22,9 +22,7 @@ const DashboardComponent = () => {
 
   const handleDeletePlat = async (platId) => {
     try {
-      // Appeler l'API pour supprimer le plat
       await deletePlat(platId);
-      // Mettre à jour la liste des plats après la suppression
       const updatedPlats = plats.filter(plat => plat._id !== platId);
       setPlats(updatedPlats);
     } catch (error) {

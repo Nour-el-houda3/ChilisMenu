@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// Importez le fichier CSS en fonction du chemin correct
 import './LayoutdashboardStyles.css'; 
 
 const DashboardComponent = () => {

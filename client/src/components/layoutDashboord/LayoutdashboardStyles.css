@@ -21,14 +21,14 @@
 }
 
 .nav-list {
-  display: flex; /* Ajout de flex pour aligner les liens à côté les uns des autres */
+  display: flex; 
 }
 
 .nav-link {
   text-decoration: none;
   color: #333;
   padding: 10px;
-  margin-right: 10px; /* Ajout de marge entre les liens (vous pouvez ajuster cette valeur selon vos besoins) */
+  margin-right: 10px; 
 }
 
 .create-plat-link {
