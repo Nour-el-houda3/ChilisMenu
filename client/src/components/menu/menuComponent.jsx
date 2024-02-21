@@ -1,10 +1,26 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './MenuComponent.css';
 import FooterComponent from '../footer/FooterComponent';
+import { getAllPlats} from '../../api';
 
 const MenuComponent = () => {
   const menuRef = useRef(null);
   const [visibleItems, setVisibleItems] = useState(6); // Initial number of visible items
+  const [menuData, setMenuData] = useState([]); // State to store menu data
+
+  useEffect(() => {
+    // Fetch menu data from your backend API when the component mounts
+    const fetchMenuData = async () => {
+      try {
+        const data = await getAllPlats(); // Replace with your actual API endpoint
+        setMenuData(data);
+      } catch (error) {
+        console.error('Error fetching menu data:', error);
+      }
+    };
+
+    fetchMenuData();
+  }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
   const handleScrollToMenu = () => {
     menuRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -12,7 +28,7 @@ const MenuComponent = () => {
 
   const handleSeeMore = () => {
     // Increase the number of visible items when "voir plus" is clicked
-    setVisibleItems((prevVisibleItems) => prevVisibleItems + 3); // Adjust the number as needed
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 3);
   };
 
   return (
@@ -38,23 +54,20 @@ const MenuComponent = () => {
         <h2>Nos Fajitas</h2>
 
         <div className="card">
-          {Array.from({ length: visibleItems }).map((_, index) => (
-            <div className="item" key={index}>
-              <img className="plat-img" src={`/plat${index + 1}.png`} alt={`Trio Fajitas ${index + 1}`} />
-              <div className="name">Trio Fajitas</div>
-              <div className="price">49.90 DT</div>
-            </div>
-          ))}
+        {menuData.slice(0, visibleItems).map((menuItem, index) => (
+          <div className="item" key={index}>
+            <img className="plat-img" src={menuItem.image} alt={menuItem.name} />
+            <div className="name">{menuItem.name}</div>
+            <div className="price">{menuItem.price} DT</div>
+          </div>
+        ))}
 
-
-{visibleItems < 9 && (
+        {visibleItems < menuData.length && (
           <button className="voir-plus-btn" onClick={handleSeeMore}>
             Voir plus
           </button>
         )}
-
-        </div>
-
+      </div>
 
         <FooterComponent />
       </div>

@@ -82,9 +82,8 @@ h2 {
   font-size: 40px;
   margin: 10px 0; 
 }
-
 .card {
-  margin: 5%; 
+  margin: 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -95,7 +94,7 @@ h2 {
   border-radius: 8px;
   padding: 16px;
   margin: 16px;
-  width: calc(33.33% - 32px);
+  width: calc(33.33% - 32px); /* Three items per row */
   text-align: left;
 }
 
@@ -114,11 +113,12 @@ h2 {
 }
 
 .plat-img {
-  width: 90%;
+  width: 100%;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
 }
+
 
 .poivre-img {
   width: 10%;
@@ -137,3 +137,37 @@ h2 {
 .voir-plus-btn:hover {
   background-color: #ba1e1e; 
 }
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 20px;
+  }
+
+  .chilisLogo-img {
+    width: 50px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .item {
+    width: 100%; /* One item per row on smaller screens */
+    margin: 0 0 20px;
+  }
+
+  .plat-img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+  .voir-plus-btn {
+    font-size: 14px;
+  }
+}
+
+

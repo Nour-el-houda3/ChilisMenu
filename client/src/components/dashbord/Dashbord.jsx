@@ -21,12 +21,15 @@ const DashboardComponent = () => {
   }, []);
 
   const handleDeletePlat = async (platId) => {
-    try {
-      await deletePlat(platId);
-      const updatedPlats = plats.filter(plat => plat._id !== platId);
-      setPlats(updatedPlats);
-    } catch (error) {
-      console.error('Error deleting plat:', error);
+    const confirmDelete = window.confirm("Are you sure you want to delete this plat?");
+     if (confirmDelete) {
+      try {
+        await deletePlat(platId);
+        const updatedPlats = plats.filter(plat => plat._id !== platId);
+        setPlats(updatedPlats);
+      } catch (error) {
+        console.error('Error deleting plat:', error);
+      }
     }
   };
 
@@ -55,6 +58,7 @@ const DashboardComponent = () => {
                     <img
                       src={plat.image}
                       alt={`Image du plat ${plat.name}`}
+                      className="plat-image"
                     />
                   )}
                 </td>
